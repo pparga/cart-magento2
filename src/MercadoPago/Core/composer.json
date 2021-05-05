@@ -1,15 +1,15 @@
 {
-    "name": "mercadopago/core",
+    "name": "ppargamercadopago/core",
     "description": "Mercado Pago Magento 2 Plugin",
     "type": "magento2-module",
-    "version": "3.8.4",
+    "version": "3.8.5",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
     ],
     "autoload": {
         "psr-4": {
-            "MercadoPago\\Core\\": ""
+            "PpargaMercadoPago\\Core\\": ""
         },
         "files": [
             "registration.php"
