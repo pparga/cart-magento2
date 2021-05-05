@@ -156,7 +156,7 @@ class Basic extends AbstractMethod
                 "picture_url" => $image->getUrl(),
                 "category_id" => $config['category_id'],
                 "quantity" => (int)number_format($item->getQtyOrdered(), 0, '.', ''),
-                "unit_price" => (float)number_format($item->getPrice(), 2, '.', '')
+                "unit_price" => (int)number_format($item->getPrice(), 2, '.', '')
             ];
         }
 
@@ -176,7 +176,7 @@ class Basic extends AbstractMethod
                 "description" => "Difference amount of the items with a total",
                 "category_id" => $config['category_id'],
                 "quantity" => 1,
-                "unit_price" => (float)$diff_price
+                "unit_price" => (int)$diff_price
             ];
             $this->_helperData->log("Total items: " . $total_item, 'mercadopago-basic.log');
             $this->_helperData->log("Total order: " . $order_amount, 'mercadopago-basic.log');
@@ -206,7 +206,7 @@ class Basic extends AbstractMethod
                 "description" => "Store discount coupon",
                 "category_id" => $config['category_id'],
                 "quantity" => 1,
-                "unit_price" => (float)$order->getDiscountAmount()
+                "unit_price" => (int)$order->getDiscountAmount()
             ];
         }
 
@@ -229,7 +229,7 @@ class Basic extends AbstractMethod
                 "description" => "Store taxes",
                 "category_id" => $config['category_id'],
                 "quantity" => 1,
-                "unit_price" => (float)$order->getBaseTaxAmount()
+                "unit_price" => (int)$order->getBaseTaxAmount()
             ];
         }
 
@@ -423,7 +423,7 @@ class Basic extends AbstractMethod
                     "description" => "Shipment cost",
                     "category_id" => $config['category_id'],
                     "quantity" => 1,
-                    "unit_price" => (float)$order->getBaseShippingAmount()
+                    "unit_price" => (int)$order->getBaseShippingAmount()
                 ];
             }
 
